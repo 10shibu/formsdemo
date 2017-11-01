@@ -1,0 +1,21 @@
+
+
+
+
+<div>
+    <%= form_tag(do_search_items_path, method: "get") do %>
+        <div class="input-group">
+            <%= text_field_tag(:title,'', class:'form-control') %>
+              <span class="input-group-btn">
+                 <%= button_tag( :class => "btn btn-default", :type =>'submit') do %>
+                  <!-- <span class='glyphicon glyphicon-search'></span> -->
+                  <i class="icon-ok icon-white"></i> Search
+                 <% end %>
+               </span>
+        </div>
+        <div class="form-group">
+              <label>Return matching or non-matching items</label>
+              <%= select_tag(:match_no_match,options_for_select( [['only matching', "match"],['only non matching', "nomatch"]])) %>
+        </div>
+      <% end %>
+</div>
